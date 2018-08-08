@@ -11,9 +11,14 @@ class River
   def fish_count
     return @fish_pop.length
   end
+  #
+  # def remove_fish(fish)
+  #   @fish_pop.delete(fish)
+  # end
 
-  def remove_fish(fish)
-    @fish_pop.delete(fish)
+  def lose_fish(number_of_fish)
+    return @fish_pop.pop(number_of_fish) if @fish_pop.length >= number_of_fish
+    return Fish.new("Magic Fish")
   end
 
 end
